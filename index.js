@@ -27,6 +27,7 @@ import User from "./API/User";
 googleAuthConfig(passport);
 privateRouteConfig(passport);
 
+const PORT = process.env.PORT || 4000;
 const zomato = express();
 zomato.use(cors());
 zomato.use(express.json());
@@ -59,7 +60,7 @@ zomato.use("/review", Review );
 zomato.use("/user", User );
 
 
-zomato.listen(4000,() => {
+zomato.listen(PORT,() => {
     ConnectDB().then(()=>{
         console.log("Server Of Zomato App is Running....");
     }).catch((err)=>{
