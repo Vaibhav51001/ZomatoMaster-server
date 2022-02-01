@@ -87,7 +87,7 @@ Router.get("/google", passport.authenticate("google",{
 Router.get("/google/callback", passport.authenticate("google",{failureRedirect: "/"}), 
 (req,res)=>{
     return res.status(200).redirect(
-        `https://zomato-app-server.herokuapp.com/google/${req.session.passport.user.token}`);
+        `https://zomato-master-client.vercel.app/google/${req.session.passport.user.token}`);
 });
 
 
